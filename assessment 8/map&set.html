@@ -1,0 +1,17 @@
+<html>
+    <head><title>map&sets</title></head>
+    <body>
+        <p>i)Q1."Problem:</br>You are given a string (STR) of length N, consisting of only the lower case English alphabet.</br>Your task is to remove all the duplicate occurrences of characters in the string.</br>"abcdef"</br></p>
+        <p>CODE</p>
+        <p>function removeDuplicate(str, n)</br>{</br>let index = 0;</br>for (i = 0; i < n; i++)</br>{</br>let j;</br>for (j = 0; j < i; j++)</br>{</br>if (str[i] === str[j])</br>{</br>break;</br>}</br>}</br>if (j === i)</br>{</br>str[index++] = str[i];</br>}</br>}</br>return str.join("").slice(str, index);</br>}</br>let str = "abcadeecfb".split("");</br>let n = str.length;</br>console.log(removeDuplicate(str, n));</p>
+        <p>OUTPUT</p>
+        <p>Input</br>abcadeecfb</br>Output</br>abcdef</p><hr>
+
+        <p>ii)Q2."Problem:</br>You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)</br></p>
+        <p>CODE</p>
+        <p>function printans( ans )</br>{</br>for( let [ key ,value] of ans)</br>{</br>console.log(`${key}  =  ${value}` );</br>}</br>}</br>function count( str , outp_map )</br>{</br>for( let i = 0 ;i < str.length ;i++)</br>{</br>let k = outp_map.get(str[i]);</br>outp_map.set(str[i], k+1) ;</br>}</br>printans(outp_map);</br>}</br>function count_occurs( test , callback )</br>{</br>if( test.length === 0 )</br>{</br>console.log(" empty string ");</br>return ;</br>}</br>else</br>{</br>let ans = new Map();</br>for( let i = 0 ;i < test.length;i++)</br>{</br>ans.set(test[i], 0);</br>}</br>callback( test ,ans);</br>}</br>}</br>let test =  "abcadeecfb";</br>count_occurs( test ,count);</p>
+        <p>OUTPUT</p>
+        <p>Input</br>abcadeecfb</br>Output</br>a=2</br>b=2</br>c=2</br>d=1</br>e=2</br>f=1</p><hr>
+
+        </body>
+    </html>
